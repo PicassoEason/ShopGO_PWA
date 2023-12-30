@@ -1,0 +1,12 @@
+.buttonContent {
+    border: none; /* 移除邊框 */
+    background-color: transparent; /* 背景透明 */
+    display: flex; /* 讓圖像和文字橫向排列 */
+    align-items: center; /* 垂直居中 */
+    gap: 5px; /* 設定圖像和文字之間的間距 */
+    color: black;
+    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 700;
+    cursor: pointer; /* 讓滑鼠懸停時顯示手指指標 */
+}
