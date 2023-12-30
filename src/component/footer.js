@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BiArchive,BiLogoMessenger , BiSolidUser,BiHome  } from "react-icons/bi";
+import { BiArchive,BiLogoMessenger , BiSolidUser,BiHome,BiSolidParty  } from "react-icons/bi";
 
 function Footer() {
   const buttonStyle = {
@@ -28,7 +28,7 @@ function Footer() {
     >
       <Link to="/board">
         <button style={buttonStyle}>
-          <BiHome   size={28} />
+          <BiSolidParty   size={28} />
         </button>
       </Link>
       <Link to="/needs">
