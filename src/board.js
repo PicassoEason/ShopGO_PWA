@@ -52,7 +52,7 @@ export default function App() {
                  ))}
             </div>
 
-            
+
             <div style={{left: 120, top: 621, position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'inline-flex'}}>
                 <button onClick={handleButtonClick} className="buttonContent">
                     <img src={ref} alt="refresh icon" style={{width: 70, height: 70}}/>
@@ -60,7 +60,6 @@ export default function App() {
                         <p>更新</p> 
                     </div>
                 </button>
-              
             </div>
             <Footer></Footer>
         </div>
