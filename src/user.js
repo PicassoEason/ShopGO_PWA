@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from './component/footer';
+import Goog from './img/google.png';
 export default function App() {
     return(<>
         <div style={{width: '100%', height: '100%', position: 'relative', background: 'white'}}>
@@ -9,13 +11,13 @@ export default function App() {
             {/* 登出按鈕 */}
             <button 
               style={{
-                left: 177, 
+                left: 170, 
                 top: 572, 
                 position: 'absolute', 
                 color: 'black', 
                 fontSize: 32, 
                 fontFamily: 'Inter', 
-                fontWeight: '700', 
+                fontWeight: '650', 
                 wordWrap: 'break-word',
                 border: 'none',  // 移除邊框
                 background: 'none',  // 移除背景色
@@ -38,7 +40,7 @@ export default function App() {
                 color: 'black', 
                 fontSize: 32, 
                 fontFamily: 'Inter', 
-                fontWeight: '700', 
+                fontWeight: '650', 
                 wordWrap: 'break-word',
                 border: 'none',  // 移除邊框
                 background: 'none',  // 移除背景色
@@ -54,7 +56,8 @@ export default function App() {
             </>
 
             <div style={{left: 128, top: 155, position: 'absolute', color: 'black', fontSize: 32, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word'}}>Ezra WU</div>
-            <img style={{width: 300, height: 195, left: 59, top: 227, position: 'absolute'}} src="https://via.placeholder.com/300x195" />
+            <img style={{width: 300, height: 195, left: 59, top: 227, position: 'absolute'}} src={Goog} />
         </div>
+        <Footer></Footer>
     </>)
 }
