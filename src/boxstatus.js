@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import boxstatus from './img/box.png'
-import boxstatus2 from './img/gift-box.png'
+import boxstatus2 from './img/accept.png'
 import ref from './img/refresh.png';
 import loca from './img/location.png';
 import load from './img/loading.png';
 import Footer  from './component/footer';
 export default function App() {
     const [buttonClickCount, setButtonClickCount] = useState(0);
-    const status = true; // 假設這是您的布林值，您可以根據實際情況設置它 true 有東西 false 無東西
+    const status = false; // 假設這是您的布林值，您可以根據實際情況設置它 true 有東西 false 無東西
 
+    const Status= status ? '待取貨':'已取貨';
     const imageSource = status ? boxstatus : boxstatus2;
     const data = [
         {
             color: 'black',
             roadName: '中興村 華山路',
-            status: '待取貨',
+            status: Status,
             imageUrl: 'https://via.placeholder.com/40x40'
         },
         // 您可以添加更多的資料項目
