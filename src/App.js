@@ -2,8 +2,14 @@ import React from 'react';
 import './App.css';
 import Button from '@mui/joy/Button';
 import care from './img/index.png';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Board from './board'
+import BoxStatus from './boxstatus'
+import Needs from './needs'
+import Users from './user'
 
-function App() {
+
+function Index() {
   return (
     <div className="app-container">
       <div className="content">
@@ -18,5 +24,18 @@ function App() {
     </div>
   );
 }
-
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" />
+        <Route path="/board" element={<Board />} />
+        <Route path="/boxstatus" element={<BoxStatus />} />
+        <Route path="/needs" element={<Needs />} />
+        <Route path="/user" element={<Users />} />
+        {/* 其他路由配置 */}
+      </Routes>
+    </Router>
+  );
+}
 export default App;
