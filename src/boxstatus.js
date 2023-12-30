@@ -4,6 +4,7 @@ import boxstatus2 from './img/gift-box.png'
 import ref from './img/refresh.png';
 import loca from './img/location.png';
 import load from './img/loading.png';
+import Footer  from './component/footer';
 export default function App() {
     const [buttonClickCount, setButtonClickCount] = useState(0);
     const status = true; // 假設這是您的布林值，您可以根據實際情況設置它 true 有東西 false 無東西
@@ -52,6 +53,7 @@ export default function App() {
                     </div>
                 </button>
             </div>
+            <Footer></Footer>
         </>
     );
 }
