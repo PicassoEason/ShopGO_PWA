@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Footer from './component/footer';
-
+import {auth} from './utils/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useEffect, useState } from "react"
 export default function App() {
+    const [token, setToken] = useState('');
+    const [user, loading] = useAuthState(auth);
+    const [username, setUsername] = useState('');
     const [title, setTitle] = useState('');
     const [message, setMessage] = useState('');
     const [address, setAddress] = useState('');
+    
+    useEffect(() => {
+        setToken(localStorage.getItem('token'))
+        if (user) {
+          setUsername(user.displayName);
+        }
+    }, [user]);
+
+    if (loading) return <h1>Loading ....</h1>
+    
     const addressOptions=[
         "省府路",
         "府西路",
@@ -59,7 +74,8 @@ export default function App() {
                 <div style={{ left: 115, top: 78, position: 'absolute', color: 'black', fontSize: 32, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>我需要幫助</div>
                 <div style={{ left: 34, top: 166, position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 21, display: 'inline-flex' }}>
                     <div style={{ justifyContent: 'flex-start', alignItems: 'flex-start', gap: 4, display: 'inline-flex' }}>
-                        <div style={{ color: 'black', fontSize: 24, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>稱號： Ezra Wu</div>
+                        <div style={{ color: 'black', fontSize: 24, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>稱號：</div>
+                        <div style={{ color: 'black', fontSize: 24, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>{username}</div>
                     </div>
                     <div style={{ justifyContent: 'flex-start', alignItems: 'flex-start', gap: 4, display: 'inline-flex' }}>
                         <div style={{ color: 'black', fontSize: 24, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>訊息：</div>
