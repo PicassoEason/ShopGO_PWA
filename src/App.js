@@ -9,8 +9,6 @@ import Needs from './needs'
 import Users from './user'
 import {GoogleAuthProvider,signInWithPopup} from 'firebase/auth'
 import { auth } from './utils/firebase'
-import { useRouter } from "next/router"
-// import { useAuthState } from "react-firebase-hooks/auth"
 import { useNavigate  } from 'react-router-dom';
 
 function Index() {
