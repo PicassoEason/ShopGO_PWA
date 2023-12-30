@@ -68,6 +68,7 @@ export default function App() {
                             onChange={(e) => setMessage(e.target.value)} 
                             style={{ width: 222, height: 99, border: '1px black solid' }} 
                             placeholder="輸入訊息..." 
+                            required
                         />
                     </div>
                     <div style={{ justifyContent: 'flex-start', alignItems: 'flex-start', gap: 4, display: 'inline-flex' }}>
@@ -76,6 +77,7 @@ export default function App() {
                           value={address} 
                           onChange={(e) => setAddress(e.target.value)} 
                           style={{ width: 222, height: 29, border: '1px black solid' }}
+                          required
                         >
                           <option value="" disabled selected>選擇位址...</option> {/* 你可以添加一個預設選項 */}
                           {addressOptions.map((option, index) => (
