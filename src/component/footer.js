@@ -31,14 +31,14 @@ function Footer() {
           <BiSolidParty   size={28} />
         </button>
       </Link>
-      <Link to="/needs">
-        <button style={buttonStyle}>
-          <BiLogoMessenger  size={28} />
-        </button>
-      </Link>
       <Link to="/boxstatus">
         <button style={buttonStyle}>
           <BiArchive size={28} />
+        </button>
+      </Link>
+      <Link to="/needs">
+        <button style={buttonStyle}>
+          <BiLogoMessenger  size={28} />
         </button>
       </Link>
       <Link to="/user">
