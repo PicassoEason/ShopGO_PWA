@@ -8,22 +8,32 @@ import Footer  from './component/footer';
 export default function App() {
     const [buttonClickCount, setButtonClickCount] = useState(0);
     const status = false; // 假設這是您的布林值，您可以根據實際情況設置它 true 有東西 false 無東西
-
     const Status= status ? '待取貨':'已取貨';
     const imageSource = status ? boxstatus : boxstatus2;
-    const data = [
+    const initialData = [
         {
-            color: 'black',
-            roadName: '中興村 華山路',
-            status: Status,
-            imageUrl: 'https://via.placeholder.com/40x40'
+            // roadName: '中興村 華山路',
+            status: '待取貨',
         },
-        // 您可以添加更多的資料項目
+        // 其他項目
     ];
 
+    // 資料狀態
+    const [data, setData] = useState(initialData);
+
     const handleButtonClick = () => {
-        // 這裡您可以放置當按鈕被點擊時想執行的任何邏輯
-        console.log("click");
+        // 模擬更新資料的過程
+        const updatedData = [
+            // 模擬新的資料項目
+            {
+                // roadName: '新的道路',
+                status: '已取貨',
+            },
+            // ... 其他項目
+        ];
+        
+        // 更新資料狀態
+        setData(updatedData);
     };
 
     return (
@@ -35,7 +45,8 @@ export default function App() {
                     {data.map((item, index) => (
                         <div key={index} style={{ justifyContent: 'flex-start', alignItems: 'flex-start', gap: 24, display: 'inline-flex' }}>
                             <img style={{ width: 40, height: 40 }} src={loca}/>
-                            <div style={{ color: item.color, fontSize: 36, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}>{item.roadName}</div>
+                            {/* <div style={{ color: item.color, fontSize: 36, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}>{item.roadName}</div> */}
+                            <div style={{ color: item.color, fontSize: 36, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}>中興一村 十字路</div>
                         </div>
                     ))}
                     {data.map((item, index) => (
