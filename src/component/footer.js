@@ -2,12 +2,14 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaSearch, FaHome, FaBell, FaUser } from 'react-icons/fa';
+import { BiArchive,BiLogoMessenger , BiSolidUser,BiHome  } from "react-icons/bi";
 
 function Footer() {
   const buttonStyle = {
+    // border: 'none', // 移除框線
     border: 'none', // 移除框線
     background: 'transparent', // 使按鈕背景透明
+    marginRight: '20px',
   };
 
   return (
@@ -17,31 +19,31 @@ function Footer() {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '10px',
-        borderTop: '1px solid black',
+        borderTop: '3px solid black',
         width: '100%',
         position: 'fixed',
         bottom: 0,
         background: 'white',
       }}
     >
-      {/* <Link to="/search">
+      <Link to="/board">
         <button style={buttonStyle}>
-          <FaSearch size={28} />
-        </button>
-      </Link> */}
-      <Link to="/message">
-        <button style={buttonStyle}>
-          <FaHome size={28} />
+          <BiHome   size={28} />
         </button>
       </Link>
-      <Link to="/notifi">
+      <Link to="/needs">
         <button style={buttonStyle}>
-          <FaBell size={28} />
+          <BiLogoMessenger  size={28} />
         </button>
       </Link>
-      <Link to="/profile">
+      <Link to="/boxstatus">
         <button style={buttonStyle}>
-          <FaUser size={28} />
+          <BiArchive size={28} />
+        </button>
+      </Link>
+      <Link to="/user">
+        <button style={buttonStyle}>
+          < BiSolidUser size={28} />
         </button>
       </Link>
     </div>

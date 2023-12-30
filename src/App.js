@@ -28,7 +28,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<Index />}/>
         <Route path="/board" element={<Board />} />
         <Route path="/boxstatus" element={<BoxStatus />} />
         <Route path="/needs" element={<Needs />} />

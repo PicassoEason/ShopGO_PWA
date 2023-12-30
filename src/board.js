@@ -3,6 +3,8 @@ import ref from './img/refresh.png';
 import check from './img/accept.png';
 import x from './img/delete-button.png';
 import './css/board.css'
+import Footer  from './component/footer';
+
 export default function App() {
     const [buttonClickCount, setButtonClickCount] = useState(0);
     const messages = [
@@ -58,6 +60,7 @@ export default function App() {
                 </button>
               
             </div>
+            <Footer></Footer>
         </div>
     </>)
 }
