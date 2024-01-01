@@ -7,7 +7,6 @@ export default function App() {
     const [token, setToken] = useState('');
     const [user, loading] = useAuthState(auth);
     const [username, setUsername] = useState('');
-    const [title, setTitle] = useState('');
     const [message, setMessage] = useState('');
     const [address, setAddress] = useState('');
     
@@ -55,15 +54,38 @@ export default function App() {
         "中正路",
         // ... 可以添加更多路名
       ]
-    const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        // 這裡可以處理提交表單的邏輯，例如發送表單數據到後端
-        console.log('Title:', title);
-        console.log('Message:', message);
-        console.log('Address:', address);
-
-        // 清除表單內容
-        setTitle('');
+    
+        const formData = {
+            mes: message,
+            address: address,
+            user: username,
+        };
+    
+        try {
+            const response = await fetch('http://localhost:5001/api/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // You can add additional headers if necessary
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Data submitted successfully:', data);
+                // Do something after successful submission if needed
+            } else {
+                console.error('Failed to submit data:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error submitting data:', error);
+        }
+    
+        // Clear form fields after submission
+ 
         setMessage('');
         setAddress('');
     };
