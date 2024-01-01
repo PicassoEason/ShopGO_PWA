@@ -35,20 +35,14 @@ export default function App() {
         // 更新資料狀態
         setData(updatedData);
     };
-
+ 
     return (
         <>
             <div style={{ width: '100%', height: '100%', position: 'relative', background: 'white' }}>
                 <div style={{ left: 100, top: 88, position: 'absolute', color: 'black', fontSize: 48, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word', letterSpacing: '90px' }}>狀態</div>
                 <img style={{ width: 200, height: 180, left: 90, top: 198, position: 'absolute' }} src={imageSource} />
                 <div style={{ left: 32, top: 443, position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 22, display: 'inline-flex' }}>
-                    {data.map((item, index) => (
-                        <div key={index} style={{ justifyContent: 'flex-start', alignItems: 'flex-start', gap: 24, display: 'inline-flex' }}>
-                            <img style={{ width: 40, height: 40 }} src={loca}/>
-                            {/* <div style={{ color: item.color, fontSize: 36, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}>{item.roadName}</div> */}
-                            <div style={{ color: item.color, fontSize: 36, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}>中興一村 十字路</div>
-                        </div>
-                    ))}
+                   
                     {data.map((item, index) => (
                         <div key={index} style={{ justifyContent: 'flex-start', alignItems: 'flex-start', gap: 24, display: 'inline-flex' }}>
                             <img style={{ width: 40, height: 40 }} src={load} />
