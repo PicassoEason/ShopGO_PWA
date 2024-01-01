@@ -7,7 +7,7 @@ import load from './img/loading.png';
 import Footer  from './component/footer';
 export default function App() {
     const [status, setStatus] = useState(false); // 初始狀態為 false
-    const Status = status ? '待取貨' : '已取貨';
+    const Status = status ? '已取貨':  '待取貨';
     const imageSource = status ? boxstatus : boxstatus2;
 
     useEffect(() => {
