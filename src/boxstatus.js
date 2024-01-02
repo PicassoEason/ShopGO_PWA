@@ -17,7 +17,7 @@ export default function App() {
 
     const fetchData = () => {
         // 從 API 獲取狀態
-        fetch('http://localhost:5002/api/sensor')
+        fetch('https://shopgo-rtdb-zeta.vercel.app/api/sensor')
             .then(response => response.json())
             .then(dataFromApi => {
                 const parsedStatus = dataFromApi.data === "false" ? true : false;
