@@ -13,7 +13,7 @@ export default function App() {
     }, []);
 
     const fetchData = () => {
-        fetch('http://localhost:5001/api/mes') // 請替換成您的 API 端點 URL
+        fetch('https://shopgo-fbdb-five.vercel.app/api/mes') // 請替換成您的 API 端點 URL
             .then(response => response.json())
             .then(data => {
                 setMessages(data); // 更新留言狀態
