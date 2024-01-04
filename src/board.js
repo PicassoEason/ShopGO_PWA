@@ -13,7 +13,7 @@ export default function App() {
     }, []);
 
     const fetchData = () => {
-        fetch('http://localhost:5001/api/mes') // 請替換成您的 API 端點 URL
+        fetch('https://shopgo-fbdb-five.vercel.app/api/mes') // 請替換成您的 API 端點 URL
             .then(response => response.json())
             .then(data => {
                 setMessages(data); // 更新留言狀態
@@ -40,15 +40,31 @@ export default function App() {
         <>
             <div style={{ width: '100%', height: '100%', position: 'relative', background: 'white' }}>
                 <div style={{ left: 103, top: 80, position: 'absolute', color: 'black', fontSize: 32, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>求助留言板</div>
-                <div style={{ left: 32, top: 169, position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 12, display: 'inline-flex' }}>
+                <div style={{ left: 32, top: 169, position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 12, display: 'inline-flex', overflowY: 'auto', maxHeight: '75vh' }}>
                     {messages.map((message, index) => (
                         <div key={message.id} style={{ justifyContent: 'flex-start', alignItems: 'center', gap: 8, display: 'inline-flex' }}>
                             <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'inline-flex' }}>
-                                <div style={{ width: 223, height: 60, background: '#FFC38C', borderRadius: 5, border: '1px #949494 solid' }}>
+                                <div style={{ width: 223, height: 75, background: '#FFC38C', borderRadius: 5, border: '1px #949494 solid' }}>
                                     <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, display: 'flex' }}>
-                                        <div style={{ color: 'black', fontSize: 12, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>{new Date(message.timestamp._seconds * 1000).toLocaleString()}</div>
-                                        <div style={{ textAlign: 'center', color: 'black', fontSize: 16, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>{message.user}</div>
+                                    <div style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 1, display: 'flex' }}>
+                                        <div style={{ color: 'black', fontSize: 8, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}>
+                                        {new Date((message.timestamp.seconds * 1000) + (message.timestamp.nanoseconds / 1000000)).toLocaleString('en-GB', {
+                                              year: 'numeric',
+                                              month: 'numeric',
+                                              day: 'numeric',
+                                              hour: 'numeric',
+                                              minute: 'numeric',
+                                            })}
+                                        </div>
+                                        <div style={{ color: 'black', fontSize: 12, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}> {"               "}  </div>
+                                        {/* <div style={{ textAlign: 'center', color: 'black', fontSize: 16, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>{message.user}</div> */}
+                                        {/* <div style={{ textAlign: 'center', color: 'black', fontSize: 16, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>{message.address}</div> */}
                                         <div style={{ color: 'black', fontSize: 12, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}>{message.mes}</div>
+                                    </div>
+                                        
+                                        <div style={{ textAlign: 'center', color: 'black', fontSize: 16, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>{message.user}</div>
+                                        <div style={{ textAlign: 'center', color: 'black', fontSize: 16, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word' }}>{message.address}</div>
+                                        {/* <div style={{ color: 'black', fontSize: 12, fontFamily: 'Inter', fontWeight: '500', wordWrap: 'break-word' }}>{message.mes}</div> */}
                                     </div>
                                 </div>
                             </div>
