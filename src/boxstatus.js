@@ -6,7 +6,7 @@ import loca from './img/location.png';
 import load from './img/loading.png';
 import Footer  from './component/footer';
 export default function App() {
-    const [status, setStatus] = useState(false); // 初始狀態為 false
+    const [status, setStatus] =useState([]); // 初始狀態為 false
     const Status = status ? '已取貨':  '待取貨';
     const imageSource = status ? boxstatus : boxstatus2;
 
