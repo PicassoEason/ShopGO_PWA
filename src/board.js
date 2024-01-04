@@ -16,13 +16,20 @@ export default function App() {
         fetch('https://shopgo-fbdb-five.vercel.app/api/mes') // 請替換成您的 API 端點 URL
             .then(response => response.json())
             .then(data => {
-                const sortedMessages = data.sort((a, b) => b.timestamp.seconds - a.timestamp.seconds);
-                sortedMessages(data); // 更新留言狀態
+                // Check if data is an array before sorting
+                if (Array.isArray(data)) {
+                    // Sort messages based on timestamp in descending order
+                    const sortedMessages = data.sort((a, b) => b.timestamp.seconds - a.timestamp.seconds);
+                    setMessages(sortedMessages); // 更新留言狀態
+                } else {
+                    console.error('Data is not an array:', data);
+                }
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     };
+    
 
     const handleButtonClick = () => {
         console.log("click fresh");
