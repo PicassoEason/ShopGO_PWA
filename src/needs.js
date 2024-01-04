@@ -64,7 +64,7 @@ export default function App() {
         };
     
         try {
-            const response = await fetch('http://localhost:5001/api/data', {
+            const response = await fetch('https://shopgo-fbdb-five.vercel.app/api/data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

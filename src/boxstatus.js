@@ -6,7 +6,7 @@ import loca from './img/location.png';
 import load from './img/loading.png';
 import Footer  from './component/footer';
 export default function App() {
-    const [status, setStatus] = useState(false); // 初始狀態為 false
+    const [status, setStatus] =useState([]); // 初始狀態為 false
     const Status = status ? '已取貨':  '待取貨';
     const imageSource = status ? boxstatus : boxstatus2;
 
@@ -17,7 +17,7 @@ export default function App() {
 
     const fetchData = () => {
         // 從 API 獲取狀態
-        fetch('http://localhost:5002/api/sensor')
+        fetch('https://shopgo-rtdb-zeta.vercel.app/api/sensor')
             .then(response => response.json())
             .then(dataFromApi => {
                 const parsedStatus = dataFromApi.data === "false" ? true : false;
