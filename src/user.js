@@ -29,9 +29,9 @@ export default function App() {
         
     }
 
-    const helpList=async()=>{
-      console.log("click help")
-    }
+    // const helpList=async()=>{
+    //   console.log("click help")
+    // }
 
     if (user || token !="")
     return(<>
@@ -63,7 +63,7 @@ export default function App() {
             </>
             <>
             {/* 關懷清單 */}
-            <button 
+            {/* <button 
               style={{
                 left: 140, 
                 top: 463, 
@@ -80,7 +80,7 @@ export default function App() {
               onClick={helpList}
             >
               關懷清單
-            </button>
+            </button> */}
             </>
 
             <div style={{left: 128, top: 155, position: 'absolute', color: 'black', fontSize: 32, fontFamily: 'Inter', fontWeight: '700', wordWrap: 'break-word'}}>{username}</div>
