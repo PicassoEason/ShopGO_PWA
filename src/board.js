@@ -16,7 +16,8 @@ export default function App() {
         fetch('https://shopgo-fbdb-five.vercel.app/api/mes') // 請替換成您的 API 端點 URL
             .then(response => response.json())
             .then(data => {
-                setMessages(data); // 更新留言狀態
+                const sortedMessages = data.sort((a, b) => b.timestamp.seconds - a.timestamp.seconds);
+                sortedMessages(data); // 更新留言狀態
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
