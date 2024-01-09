@@ -1,31 +1,60 @@
-# figma 設計稿 -首頁
+# CareConnect 您的最佳鄰里互助系統
 
-![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/00c7ce1d-5674-4ef0-b24e-778bebd91d4a)
+## 解決問題
 
-# figma 設計稿 -留言板
+1. 高齡者無人照料
+2. 缺乏友善的物資遞送機制
+3. 鄰里互助機制不健全
+4. 缺乏關懷機制
 
-![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/514e8209-2e3d-4bce-963a-11a62cccdfa8)
+## 概念發想
 
-# figma 設計稿 -狀態1
-
-![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/9862364f-d8f8-4b82-b353-c10f5b7c329b)
-
-
-
-# figma 設計稿 -狀態2
+![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/2a3c9619-0fb6-4d31-a19e-c0d3d1a7bafc)
 
 
-![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/b7bdf1ef-7f94-45bd-8c09-c8baf83ce4f8)
+## SDGS 指標
+![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/018ff598-4348-4e60-8307-5809617fc2ed)
+
+![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/4dfb3b0a-5ae4-4680-b2ce-0ff29432510f)
+
+## 參展左品
+
+### 參展小冊子
+[CareConnect (1).pdf](https://github.com/PicassoEason/ShopGO_PWA/files/13875397/CareConnect.1.pdf)
 
 
-# figma 設計稿 -我需要幫助
+
+### DEPLOY
+
+FRONTEND: https://shop-go-pwa.vercel.app/
+BACKEND 1: https://shopgo-rtdb-zeta.vercel.app/api/sensor
+sensor {"data":"false/true"}
+
+BACKEND 2: 
+取得所有對話紀錄
+GET http://localhost:5001/api/mes
+
+新增訊息
+POST http://localhost:5001/api/data
+
+取得
+GET https://shopgo-fbdb-five.vercel.app/api/mes
+
+新增
+POST
 
 
-![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/af5bd73b-c94c-4984-89f1-c7d9f324cf97)
+### 源代碼
+
+#### RTDB 
+
+https://github.com/PicassoEason/shopgo_RTDB
+
+#### FBDB
+
+https://github.com/PicassoEason/shopgo_FBDB
 
 
-# figma 設計稿 -我需要幫助
+#### ESP32
 
-![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/33251d12-0ead-4790-bcc9-abc5d0761437)
-
-
+https://github.com/PicassoEason/shopgo_FBDB
