@@ -44,7 +44,7 @@ GET https://shopgo-fbdb-five.vercel.app/api/mes
 POST
 
 
-### 源代碼
+## 源代碼
 
 #### RTDB 
 
@@ -58,3 +58,12 @@ https://github.com/PicassoEason/shopgo_FBDB
 #### ESP32
 
 https://github.com/PicassoEason/shopgo_FBDB
+
+## 影片
+
+#### 產品介紹
+https://youtu.be/aJ466paUCKY?si=F8QVfS5kQ3N5xE16
+
+#### 產品使用
+
+https://youtu.be/R0mVfGe0yhw?si=2PVAMp2up_l_Om17
