@@ -17,7 +17,7 @@
 
 ![image](https://github.com/PicassoEason/ShopGO_PWA/assets/87004138/4dfb3b0a-5ae4-4680-b2ce-0ff29432510f)
 
-## 參展左品
+## 參展作品
 
 ### 參展小冊子
 [CareConnect (1).pdf](https://github.com/PicassoEason/ShopGO_PWA/files/13875397/CareConnect.1.pdf)
